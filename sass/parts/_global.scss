@@ -85,7 +85,7 @@ p {
     margin: 10%;
 
     @media screen and (min-width: 320px) and (max-width: 480px) {
-        width: 100vw;
+        width: 100%;
         justify-content: center;
         align-content: center;
         align-items: center;
@@ -220,10 +220,10 @@ p {
     [id^="modal-toggle"] {
         display: none;
 
-        &.active~.modal-backdrop,
-        &:checked~.modal-backdrop {
+        &.active ~ .modal-backdrop,
+        &:checked ~ .modal-backdrop {
             background-color: rgba(0, 0, 0, 0.6);
-            width: 100vw;
+            width: 100%;
             height: 100vh;
             position: fixed;
             left: 0;
@@ -234,8 +234,8 @@ p {
             transition: opacity 0.2s ease-in;
         }
 
-        &.active~.modal-content,
-        &:checked~.modal-content {
+        &.active ~ .modal-content,
+        &:checked ~ .modal-content {
             opacity: 1;
             background-color: #ededed;
             color: #aeaeae;
@@ -294,7 +294,6 @@ p {
         border: 2px solid $main_color;
         border-radius: 50%;
         display: block;
-        backface-visibility: visible;
         -webkit-backface-visibility: visible;
         transition: opacity .2s ease;
     }

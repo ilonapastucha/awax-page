@@ -24,9 +24,10 @@
 
     &-menu {
         height: 100%;
+        margin-right: 20px;
 
         &-hamburger {
-            @media screen and (min-width: 320px) and (max-width: 767px) {
+            @media screen and (max-width: 767px) {
                 width: 40px;
                 height: 20px;
                 position: fixed;
@@ -71,8 +72,7 @@
                     top: 0px;
                 }
 
-                span:nth-child(2),
-                span:nth-child(3) {
+                span:nth-child(2), span:nth-child(3) {
                     top: 14px;
                 }
 
@@ -124,8 +124,13 @@
             align-content: center;
             align-items: center;
             text-align: center;
-            background-color: rgba(0, 0, 0, 0);
+            background-color: rgba(0,0,0,0);
             left: 100%;
+
+            @media screen and (max-width: 767px) {
+                overflow-y: scroll;
+                -webkit-overflow-scrolling: touch;
+            }
 
             a {
                 padding: 30px 0px;
@@ -133,13 +138,15 @@
                 text-decoration: none;
 
                 &:hover {
-                    border-bottom: 5px solid $main_color;
+                    @media screen and (min-width: 768px) {
+                        border-bottom: 5px solid $main_color;
+                    }
                 }
             }
 
             @media screen and (min-width: 320px) and (max-width: 768px) {
                 position: fixed;
-                background-color: rgba(0, 0, 0, 1);
+                background-color: rgba(0,0,0,1);
                 z-index: 999999;
                 top: 0;
                 left: 100%;
@@ -488,12 +495,12 @@
                 }
 
                 @media screen and (min-width: 768px) and (max-width: 1023px) {
-                    width: 40vw;
+                    width: 40%;
                 }
 
                 @media screen and (min-width: 1024px) {
                     width: 400px;
-                    box-shadow: 0px 0px 18px 1px rgba(0, 0, 0, 0.4);
+                    box-shadow: 0px 0px 18px 1px rgba(0,0,0,0.4);
                 }
             }
         }
@@ -598,10 +605,11 @@
             background-color: #ededed;
             height: 55px;
 
-            @media screen and (min-width: 320px) and (max-width: 480px) {}
+            @media screen and (min-width: 320px) and (max-width: 480px) {
+            }
 
             @media screen and (min-width: 320px) and (max-width: 767px) {
-                width: 90vw;
+                width: 90%;
                 margin: 0 15px;
                 height: auto;
                 flex-wrap: wrap;
@@ -631,7 +639,7 @@
                 }
 
                 @media screen and (min-width: 320px) and (max-width: 480px) {
-                    width: 40vw;
+                    width: 40%;
                     height: 40px;
                     padding: 10px 0;
                     margin: 5px auto;
@@ -696,7 +704,7 @@
                 justify-content: center;
                 align-content: center;
                 align-items: center;
-                background-color: rgba(0, 0, 0, 0.7);
+                background-color: rgba(0,0,0,0.7);
                 transition: opacity 0.25s ease-in;
 
                 h2 {
@@ -792,13 +800,13 @@
 
     .happy-clients-title {
         @media screen and (min-width: 320px) and (max-width: 1070px) {
-            width: 100vw;
+            width: 100%;
         }
     }
 
     .happy-clients-carousel {
         @media screen and (min-width: 320px) and (max-width: 1070px) {
-            width: 100vw;
+            width: 100%;
         }
 
         .client {
@@ -809,7 +817,7 @@
             align-items: center;
 
             @media screen and (min-width: 320px) and (max-width: 480px) {
-                width: 100vw;
+                width: 100%;
             }
 
             img {
@@ -854,6 +862,7 @@
                     font-size: 14px;
                     font-weight: 300;
                     line-height: 25px;
+                    padding: 0
                 }
             }
         }
@@ -883,14 +892,14 @@
 
         @media screen and (min-width: 320px) and (max-width: 768px) {
             height: auto;
-            width: 100vw;
+            width: 100%;
             flex-wrap: wrap;
             margin: 0 auto;
             justify-content: space-around;
         }
 
         div {
-            width: 100px;
+            width: 120px;
             height: 100px;
             display: flex;
             justify-content: center;
@@ -902,7 +911,8 @@
             }
 
             img {
-                @media screen and (min-width: 320px) and (max-width: 767px) {}
+                @media screen and (min-width: 320px) and (max-width: 767px) {
+                }
             }
         }
     }
@@ -929,7 +939,7 @@
         }
 
         @media screen and (min-width: 320px) and (max-width: 579px) {
-            width: 100vw;
+            width: 100%;
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
@@ -1020,6 +1030,8 @@
 
                 @media screen and (min-width: 320px) and (max-width: 875px) {
                     margin: 0;
+                    height: auto;
+                    width: 100%;
                 }
             }
 
@@ -1042,6 +1054,7 @@
                     font-weight: 700;
                     margin-bottom: 10px;
                     position: relative;
+                    text-align: left;
 
                     @media screen and (min-width: 320px) and (max-width: 480px) {
                         text-align: center;
@@ -1051,7 +1064,6 @@
                         content: url("../images/feature/icon.png");
                         position: absolute;
                         left: -50px;
-                        top: -5px;
 
                         @media screen and (min-width: 320px) and (max-width: 480px) {
                             left: 5%;
@@ -1065,6 +1077,7 @@
                     line-height: 25px;
                     text-align: left;
                     margin-bottom: 10px;
+                    padding: 0;
 
                     @media screen and (min-width: 320px) and (max-width: 480px) {
                         padding: 0 10px;
@@ -1131,7 +1144,7 @@
     border-width: 1px;
     border-color: #cfcfcf;
 
-    @media screen and (min-width: 320px) and (max-width: 768px) {
+    @media screen and (min-width: 320px ) and (max-width: 768px) {
         height: auto;
     }
 }
@@ -1143,7 +1156,7 @@
     justify-content: center;
     align-items: center;
 
-    @media screen and (min-width: 320px) and (max-width: 768px) {
+    @media screen and (min-width: 320px ) and (max-width: 768px) {
         flex-wrap: wrap;
     }
 
@@ -1152,18 +1165,18 @@
         flex-direction: row;
         margin-right: 100px;
 
-        @media screen and (min-width: 320px) and (max-width: 768px) {
+        @media screen and (min-width: 320px ) and (max-width: 768px) {
             justify-content: center;
             align-items: center;
             align-content: center;
             margin: 0 auto;
-            width: 100vw;
+            width: 100%;
         }
 
         h3 {
             margin-left: 20px;
 
-            @media screen and (min-width: 320px) and (max-width: 480px) {
+            @media screen and (min-width: 320px ) and (max-width: 480px) {
                 margin-left: 10px;
             }
         }
@@ -1176,7 +1189,7 @@
         align-items: center;
         margin: 0 20px;
 
-        @media screen and (min-width: 320px) and (max-width: 768px) {
+        @media screen and (min-width: 320px ) and (max-width: 768px) {
             margin: 10px 20px;
         }
 
@@ -1246,7 +1259,7 @@
 
     .google-map {
         position: absolute;
-        width: 100vw;
+        width: 100%;
         height: 415px;
         z-index: 1;
 
@@ -1388,7 +1401,7 @@
 
             @media screen and (min-width: 320px) and (max-width: 767px) {
                 order: 1;
-                width: 90vw;
+                width: 90%;
                 margin: 0 0 20px 0;
                 align-self: center;
             }
@@ -1424,7 +1437,7 @@
             @media screen and (min-width: 320px) and (max-width: 480px) {
                 order: 2;
                 margin: 20px 0 20px 0;
-                width: 90vw;
+                width: 90%;
                 align-self: center;
             }
 
